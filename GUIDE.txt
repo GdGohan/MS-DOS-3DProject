@@ -1,0 +1,33 @@
+MOUNT FOLDER IN MS-DOS
+
+mount c DRIVER LETTER:\FOLDER
+C:
+
+(dirs: check files and folders)
+(unmount: imgmount -u LETTER)
+
+BACK TO A PREVIOUS FOLDER
+
+cd ..
+cd ..\..
+
+INSTALLING C++ COMPILER
+
+watcomc
+
+COMPILING CPP (em breve)
+autoexec
+wcl exemplo.c
+exemplos
+
+EXECUTE DOS3D PROGRAM
+
+cd dos3d
+dos3d
+
+EXECUTE SRB2 PROGRAM
+
+cd srb2
+srb2dos
+
+//DOS3D Project by https://github.com/kondrak/dos3d
