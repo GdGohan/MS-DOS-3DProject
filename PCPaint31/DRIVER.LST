@@ -1,0 +1,127 @@
+CGA      IBM Color Graphics Board (Paradise and Herc Color)
+004Medium  Medium Res Graphics (320x200x4)
+006High    High Res Graphics (640x200x2)
+099Current Default Mode (No Override)
+(06/15/YY)
+EGA      IBM Enhanced Graphics Adapt (& Compat w/ 128-256K)
+004Medium  Medium Res Graphics (320x200x4)
+006CGA_HighHigh Res Graphics (640x200x2)
+014High    Color CGA High Res (640x200x16)
+016EGA_HIGHEGA Extended High Res (640x350x16)
+099Current Default Mode (No Override)
+(06/15/YY)
+EGA      IBM Enhanced Graphics Adaptor (w/ONLY 64K)
+004Medium  Medium Res Graphics (320x200x4)
+006CGA_HighHigh Res Graphics (640x200x2)
+014High    Color CGA High Res (640x200x16)
+099Current Default Mode (No Override)
+(06/15/YY)
+EGAMONO  IBM Enhanced Graphics Adapt (w/Monochrome Display)
+015GraphicsMonochrome Graphics (640x350x4)
+099Current Default Mode (No Override)
+(06/15/YY)
+VGA      IBM Video Graphics Adapt (PS/2 50,60,&80)
+004Medium  Medium Res Graphics (320x200x4)
+006CGA_HighHigh Res Graphics (640x200x2)
+016EGA_HIGHEGA Extended High Res (640x350x16)
+017VGA_B&W VGA High Res (640x480x2)
+018VGA_HIGHVGA High Res Color (640x480x16)
+099Current Default Mode (No Override)
+(06/15/YY)
+MCGA     IBM PS/2 Model 25 & 30 Video Graphics Adapt
+004Medium  Medium Res Graphics (320x200x4)
+006CGA_HighHigh Res Graphics (640x200x2)
+017MCGA    MCGA High Res (640x480x2)
+099Current Default Mode (No Override)
+(06/15/YY)
+HERC     Hercules Card - Both Full & Half Modes
+003Full    Full Page Graphics (720x348)
+002Half    Half Page Graphics (720x348)
+099Current Default Mode (No Override)
+(06/15/YY)
+HERCHALF Hercules Card - Half Mode Only (2 display system)
+002Half    Half Page Graphics (720x348)
+099Current Default Mode (No Override)
+(06/15/YY)
+ATT      ATT 6300 w/ Display Enhancement Board
+004Medium  Medium Res Graphics (320x200x4)
+006CGA_HighHigh Res Graphics (640x200x2)
+064Super   640x400 Mono Graphics
+065High    Color CGA High Res (640x200x16)
+066DEB_HIGHEGA Extended High Res (640x400x16)
+099Current Default Mode (No Override)
+(06/15/YY)
+ATT      ATT 6300 - Monochrome Display
+004Medium  Medium Res Graphics (320x200x4)
+006High    High Res Graphics (640x200x2)
+064Super   640x400 Mono Graphics
+099Current Default Mode (No Override)
+(06/15/YY)
+TOSHIBA  TOSHIBA 3100
+004Medium  Medium Res Graphics (320x200x4)
+006High    High Res Graphics (640x200x2)
+116Super   640x400 Mono Graphics
+099Current Default Mode (No Override)
+(06/15/YY)
+MONO     IBM Monochrome Display (NO GRAPHICS)
+007Text    Monochrome Text Mode
+099Current Default Mode (No Override)
+(06/15/NN)
+*
+IBM     2IBM Graphics, Epson MX & Compatibles (BW/Color)
+IBMQW    IBM Quiet Writer
+EPSON   2Epson FX,RX,JX and 100% Epson Compatibles (BW/Color)
+EPSON24 2Epson LQ-800, LQ-1500 & LQ Compatible 24-Pin Printers
+GQ3500   Epson GQ-3500 Laser Printer (Read GQ3500.NTS for details)
+LJET     HP Laserjet - Portrait (Normal)
+AMT     2Advanced Matrix Tech - Office Printer (BW/Color)
+ANADEX  2Anadex Scribe Series Printers (BW/Color)
+BROTHER 1Brother DM45
+BR2024WP1Brother 2024L in WP mode
+BRO_15091Brother 1509 in IBM emulation mode
+BRTWDP  1Brother TwinWriter in DP[WP] mode
+C_310   2C.Itoh C310 (BW/Color)
+C_ITOH  2C.Itoh Prowriter
+CANON    Canon LBP-A1/A2 Laser Beam Printers (Diablo mode text)
+CANONJ  2Canon PJ-1080 Ink Jet printer
+CORDATA  Cordata Laser Printer - VERSION 1.20 ONLY !
+PRISM   2Dataproducts 8050/8070 (BW/Color)
+IBMCOLOR2Dataproducts 8051/8071 Printers (BW/Color)
+D630     Diablo 630 Daisywheel and compatibles
+D34LQ   1Diablo Companion 34LQ in Diablo mode
+DYNAX   1Dynax (Fortis) Twinwriter (in Daisywheel mode)
+GENICOM 2Genicom 33xx and 34xx Printers (BW/Color)
+GEMINI_X1Gemini 10X and 15X Printers
+HERMES  2Hermes 615 (Color)
+PAINTJET2HP Paintjet Ink Jet printer
+THINKJET1HP Thinkjet - IBM Mode (Switch 5 up)
+HPTHINKJ1HP Thinkjet - Native HP mode
+IBMCOLOR2IBM Color Printer
+IBM_38522IBM Color Ink Jet
+IBM_38121IBM Page Printer
+PRISM   2IDS Prism (Color)
+PRIMAGE  Primage printer
+JDL     2JDL 750 Color Printer
+CANON    NCR Laser Printer (Diablo mode text)
+MT_80   1Mannesmann Tally Spirit 80
+NEC6302 1NEC - P2/P3 with 6302 ROM Cartridge
+NEC6303 2NEC - P2/P3 with 6303 ROM Cartridge (Color)
+NEC8023  NEC PC-8023
+NECP5   2NEC P5 Printers
+OKIDATA 2Okidata Microline 84-92, 184 Printers
+OKI20   2Okidta 20 color printer
+OKI193  2Okidata Microline 192 and 193
+OKI83    Okidate 83
+OKI2410 1Okidata Pacemark 2410 Printer
+PS       PostScript printers
+QUADJ   2QuadRam QuadJet (no side by side text and graphics)
+QMSKISS  QMS Kiss Laser Printer
+TI855   1Texas Instruments TI855 dot matrix
+TKNX46962Tektronix 4696 Color Ink Jet Printer
+TOSHIBA 2Toshiba 1340, 1351, 351 and 3-in-1 Printers
+WANG    2WANG PM-019 Color Printer
+X2700    Xerox 2700 and Xerox 4045 in 2700 mode (native)
+X4020   2Xerox/Diablo C-150 & 4020 Ink Jet Printers (Color)
+X4045    Xerox 4045 in native mode
+X630     Xerox 4045 in Diablo 630 emulation mode
+

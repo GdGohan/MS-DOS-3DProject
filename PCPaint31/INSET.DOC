@@ -1,0 +1,94 @@
+                   Getting Started without the Manual
+                        (.. and Change Notes)
+
+        Once you have copied the INSET SYSTEM disk on to your Work
+        disk, run the INSET.EXE program to configure INSET for your
+        system.
+
+        Then, run the TEST.BAT program to verify that INSET is
+        installed properly for your system.
+
+        Remember, if all else fails read the manual.  It's informative
+        and it has lots of pictures!
+
+        ----------------------------------------------
+        Support Notes:
+                A list of technical support rules is provided on the
+                Driver disk in the INSET.RUL file.  To display rules
+                pertaining to your problem run the INTECH program on
+                the driver diskette.
+        ----------------------------------------------
+        Change NOTES for INSET 2.2 A for users familiar with INSET 2.1 C
+              o Fast print optimization through .FST files added
+                for 4x to 10x speed improvement!
+              o To load a small, capture only, version of InSet load
+                InSet with the /C option (uses the I20C.EXE file).
+              o Contrast control added to Modify/Ink to optimize
+                grey scale dithering for text and graphics.
+              o 16 Colors supported on output to color printers.
+              o Pallette control added to allow the user to change
+                display colors.
+              o Maximum .PIX size option added to SETUP.COM.  This option
+                can reduce RAM usage for user's of Screen only graphics
+                or allow them to process huge .PIX files.
+              o VGA, MCGA, WYSE, and Genius Drivers added
+              o PIX Files opened read only when viewing and printing
+                (enhanced CD ROM compatability)
+              o Natural size expansion when viewing larger than screen
+                images works correctly
+        ----------------------------------------------
+        Change NOTES for INSET 2.1 C users familiar with INSET 2.1 B
+              o The Control-Break key will now work for halting ALL InSet
+                time consuming tasks (ie. Printing, Preview, Conversion ...).
+              o A PostScript driver has been added (see PS.NTS on driver disk
+                for usage notes with different word processors)
+              o The small version of InSet has been beefed up to handle very
+                large images (brought in by HiJaak).
+              o The default Pop-Up sequence has been changed to <Left-Shift>
+                <Control>
+        ----------------------------------------------
+        Change NOTES for INSET 2.1 B users familiar with INSET 2.1 A
+              o INSET has been modified to work better with Windows, terminal
+                emulators, and other environments requiring Active keyboard
+                mode in setup.
+              o If the default pop up key is changed from Shift-Prtsc, INSET
+                will no longer pop up on Shift-PrtSc
+              o The EGA driver has been modified to support Chartmaster EGA
+                Boeing Graph, and other graphics programs.
+              o Support for older printers has been readded (ie. PRISM, OKI2410,
+                IBMCOLOR, Hermes)
+              o Modifications were made so that BIOSFIX.COM should no longer
+                be needed with certain clone hardware
+              o INSET will detect images that are too large for it to handle
+        ----------------------------------------------
+        Change NOTES for INSET 2.1 users familiar with INSET 2.0X:
+              o Printing of Text screens is 4 times faster when inks are
+                set to B&W.
+              o INSET will handle larger than screen images up to 1MB of
+                uncompressed data brought in by HiJaak.
+              o You may Modify, Clip, and Print Larger Than Screen (LTS) images
+                without loss of resolution (Sorry no LTS editing yet)
+              o When a PRINT/GO is performed with a PIX tag on the screen,
+                the image in the tag will be printed.
+              o When merging graphics and text, merging may be aborted by
+                popping up INSET.  You will have the option of either stopping
+                or continuing the merge.
+              o The override mode works two different ways:
+                - If mode is set to CURRENT in setup, the override pop-up acts
+                  like the default pop-up using the override macro
+                - If mode is set to other than CURRENT, after initial override
+                  pop-up, subsequent override pop-ups will rotate through all
+                  of the supported screen modes until the proper screen mode
+                  is found.
+        ----------------------------------------------
+        Change NOTES for users familiar with INSET 1.X:
+              o Major upgrades include EDIT, PREVIEW, variable print RESIZE ...
+                Now the image size won't change with different printers
+              o If the PIX tag is on the screen, you can change all
+                MODIFY options (except CLIP) without VIEWing
+              o INSET 2.0 PIX files are in a new, screen independent format
+                You must use the OLDPIX.EXE program to convert old PIX files
+              o An AUTOFREE.COM program is now used to free inset from memory
+              o You must use the SETUP.COM program to change INSET
+                after initial installation
+
