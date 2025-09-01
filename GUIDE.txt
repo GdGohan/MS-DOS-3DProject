@@ -18,7 +18,7 @@ watcomc
 COMPILING CPP (EXAMPLE)
 autoexec
 wcl exemplo.c
-exemplos
+exemplo
 
 EXECUTE DOS3D PROGRAM
 
@@ -33,6 +33,10 @@ EXECUTE PAINTBRUSH
 cd pbrush
 paint
 
+EXECUTE PCPAINT
+cd pcpain~1
+pcpaint
+
 EXECUTE SRB2 PROGRAM
 
 cd srb2
@@ -41,5 +45,5 @@ srb2dos
 //DOS3D Project: https://github.com/kondrak/dos3d
 //LOTUS: https://archive.org/details/Lotus123OLD
 //SRB2: https://www.srb2.org/
-
 //Microsoft PaintBrush: https://archive.org/download/msdos_Microsoft_Paintbrush_1989
+//PC Paint: https://www.shdon.com/software/pcpaint
