@@ -1,0 +1,29 @@
+PKSFX Self-Extract Utility
+--------------------------
+
+PKSFX is a program which allows you to create your own 
+self-extracting EXE files.  Unlike other self-extracting programs, 
+PKSFX does not require that the filename of the EXE file be 
+manually entered by the user when run, or for the filename to be 
+hardcoded into the executable file.  This flexibility allows PKSFX 
+self-extracting files to be used in automated batch procedures and 
+to be renamed at any time.
+
+To create a self-extracting EXE file, follow these steps:
+
+1) Use PKARC to create the archive with the desired files in it.
+2) Copy the archive file to the end of the file PKSFX.PGM as follows:
+
+    copy/b pksfx.pgm + archive.arc  file.exe
+    
+  where archive.arc is the full archive name created in step 1.
+  file.exe is the name of the file you want to be self extracting, and
+  must have an extension of .EXE.
+
+PKSFX supports all of the options that PKXARC does, except for the 
+'v' verbose list option.  Consult the file PKXARC.DOC for more 
+information about PKXARC.  In addition, PKSFX should only used with 
+archives created by SEA's ARC version 5.0 or later or any version 
+of PKARC.  Archives created by versions of ARC before 5.0 will not 
+extract properly.
+

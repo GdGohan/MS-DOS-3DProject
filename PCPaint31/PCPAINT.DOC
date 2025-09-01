@@ -1,0 +1,40 @@
+PCPAINT.DOC
+
+To display the latest update information on PC Paint 3.1 and its manual, run
+the INSTALL program by entering the following command from the DOS prompt:
+
+				INSTALL
+
+For valuable information, Be sure to display and read all of the .DOC files.
+For example, to display PCP31.DOC, enter the following command from the DOS
+prompt while the PC Paint directory is the current directory.  To toggle 
+scrolling on and off, press Ctrl-S.
+
+			TYPE PCP31.DOC
+
+We thank you for buying PC Paint 3.1 and hope it provides you the
+kind of superior value you have come to expect from MSC.
+
+
+KNOWN BUGS THAT ARE BEING FIXED
+
+1.  PC Paint 3.1
+
+	a.  Command line 800x600 mode does not show a proper menu screen:  
+	color boar is chopped off, and Esc twice causes small viewport with 
+	color bar to show inside normal viewport.  The solution is to use
+	full screen mode for painting the image.
+
+	b.  Sometimes saves PCX files in a format that distorts the image when
+	displayed by other programs such as Word Perfect.  Displays some PCX 
+	files created by other programs in a distorted, unrecognizable form.
+
+2.  Inset changes EGA screen colors upon return from the help menu on images
+	that do not use the default palette.  The temporary solution is 
+	to put the image on the screen anew, then do not use Inset's help
+	menu while that screen is displayed.
+
+
+TECHNICAL PRODUCT SUPPORT
+
+For assistance on PC Paint 3.1, call product support at (503) 488-0224.

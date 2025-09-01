@@ -1,0 +1,635 @@
+PCP31.DOC:	PC PAINT 3.1 INFORMATION
+
+TABLE OF CONTENTS
+
+WHAT IS IN YOUR PC PAINT 3.1 PACKAGE
+	About PC Paint 3.1 (INSTALL diskette)
+	About the Font Files (INSTALL diskette)
+	About the Archiving Utilities (DRIVERS diskette)
+	About Inset's Graphic Screen Printing (DRIVERS diskette)
+	About the Sample Drawings (DRAWINGS diskette)
+HOW TO INSTALL PC PAINT 3.1
+HOW TO USE INSET AND PC PAINT 3.1
+HOW TO RUN PC PAINT 3.1
+	Extended High-Resolution Modes
+SUMMARY OF PC PAINT 3.1 COMMANDS
+	ALT Keys, Function Keys
+	Shortcuts
+HOW TO USE THE PC PAINT 3.1 UTILITY PROGRAMS
+HOW TO CONVERT PICTURE FILES BETWEEN FORMATS
+HOW TO ANIMATE YOUR PICTURES PROFESSIONALLY
+HOW TO ORDER MGI'S PICTUREPAKS
+TRADEMARKS
+PicturePak ORDER FORM
+
+----------------------------------------------------------------------
+
+WHAT IS IN YOUR PC PAINT 3.1 PACKAGE
+
+Your PC Paint 3.1 package offers the best value of any paint program on
+the market.  It consists of the following, the files being on 3 diskettes 
+(a complete list of files is given in an appendix in the manual):
+
+	PC Paint - the paint program you use to create pictures
+		CAP	- screen capture utility program
+		SHOWPIC - picture displaying utility program
+		CVTPICS	- convert picture from one video format to another
+		WHATPIC	- display video mode and size of images
+	INSET	- the program to print pictures you created with PC Paint
+		SETUP	- selects printer and video type Inset to use
+		AF	- removes Inset from memory
+	PKARC	- archiving utilities that compress files to save disk space
+	Sample clip art, screen images, and display fonts
+	Discount coupons for
+		GRASP graphics animation software from Paul Mace Software, Inc.
+		Commercial Inset/HiJaak printing and file conversion utilities
+		Screen fonts from Data Transforms, Inc.
+		TGLPLUS file conversion software from PC Qwik Art
+		PicturePak clip art from Marketing Graphics, Inc.
+
+
+About PC Paint 3.1 (INSTALL diskette)
+
+PC Paint 3.1 is a state-of-the-art paint program that lets you use a mouse
+to create professional-quality graphic images on your computer screen.  It
+is significantly improved over previous versions of PC Paint and 
+PC Paint Plus.  It contains the following major features:
+
+	Works with modern video adapters CGA, EGA, Hercules, VGA, AT&T 6300
+	Uses 800x600 mode on Cirrus, Paradise, Tseng Labs chipsets
+	36 types of flood and fill with dither, edge seek, color spread
+	Fills area larger than screen with text (floating text regions)
+	Allows adjustment of font, size, alignment, spacing, wrapping
+	Provides marquee for editing before fixing image on the screen
+	Reads and writes files in PIC, BSAVE, GIF, and PCX formats
+	Writes files in IMG (GEM/Ventura) format
+	Makes best use of DOS memory to hold images
+
+
+About the Font Files (INSTALL diskette)
+
+The .FNT files provided with PC Paint 3.1 are standard.  They allow you to 
+enter text in a variety of sizes and shapes into PC Paint graphic screens.
+The .SET font files are provided by Data Transforms Inc, and by Microtex 
+Industries.  PC Paint 3.1 comes with a discount coupon for additional 
+fonts from Data Transforms.  You may also purchase their FONTRIX font editor 
+that allows you to edit or create specialized fonts of your own.
+
+
+About the Archiving Utilities (DRIVERS diskette)
+
+The PKARC utilities are file archiving and dearchiving programs provided
+as a shareware product by PKWARE, Inc.  The files have the following uses:
+
+	PKARC.COM  - create/modify an archive (PKARC.DOC explains how)
+	PKXARC.COM - extract file(s) from archive (see PKXARC.DOC)
+	PKSFX.PGM  - header to create self-extracting archive (see PKSFX.DOC)
+
+These programs are high-quality tools that you can use to compress numerous 
+space-consuming files into one or more archive files.  The archives take much 
+less room on your disk and remove the clutter from your directories.  They are
+the ideal way to store seldom-used files such as old drawings.  You may also 
+use them to display the contents of an archive, update and freshen the files 
+inside, and extract one or more files from the archive.  Full documentation 
+is included in corresponding .DOC files.
+
+
+About Inset's Graphic Screen Printing (DRIVERS diskette)
+
+Inset is a resident program provided by Inset Systems, Inc., that prints 
+graphic screen images.  It works with any program, not just PC Paint.  It can 
+integrate text and graphics, provided they are in Inset's special file format.
+If you want this extended capability, then you must buy the commercial 
+version of Inset, and Inset's HiJaak file conversion software.  Inset has
+provided a coupon with PC Paint 3.1 that you can send in for a 25% discount
+on the Inset/HiJaak product.
+
+
+About the Sample Drawings (DRAWINGS diskette)
+
+The drawing files provided with PC Paint 3.1 are pictures that you can edit 
+with PC Paint 3.1 to create striking visual presentations on your computer, 
+and to load into a desktop publishing program such as Ventura or Page Maker
+for printing on a dot matrix or laser printer.  You may also print them
+with the Inset program provided with PC Paint 3.1.
+
+There are two categories of picture files; you can display all of them on
+an enhanced VGA system by entering the command SHOWPIC *.PIC *.CLP:
+
+	1.  PIC - these files are provided by MSC in PC Paint's own
+multi-color, multi-resolution file format.  The first letter of each
+file name is the letter of the video mode in which the file was created.
+For a complete list of the video modes, run PC Paint and look at the first
+screen.  For example, CGA pictures start with A or C; you can display and 
+edit them on almost any color system.
+
+	LGINA.PIC is a mode L picture (320 x 200, 256 colors) of Gina; 
+you can only display the picture if you have a VGA or MCGA video system 
+in your computer (standard on the IBM PS/2).  LGINA.PIC was created using 
+the VIA image capture board from Jovian Logic connected to a normal color 
+television camera.  The LKATHY.PIC file was created in the same way and is 
+provided by Jovian Logic (Fremont, CA).  Both images had their palettes 
+reorganized for optimum display using image enhancement tools from
+Microtex Industries (San Juan Capistrano, CA).
+
+	MFISH.PIC is a mode M VGA picture that shows how dramatically
+beautiful PC Paint can make a simple clip art image using dithered spread
+fills with only 16 colors!  Imagine what it can do with 256 colors...an
+example is shown in LMSC.PIC.
+
+	2.  PCX - these PicturePak files are provided free of charge by 
+Marketing Graphics Inc.  They are all monochrome (black and white) pictures
+in 640 x 480 (VGA high resolution) format, and are ideal clip art for
+editing and printing.  PC Paint can load and save files in PCX format.
+Please read the PicturePak information at the end of this file.  It contains
+a printable order form for additional clip art from MGI.
+
+
+HOW TO INSTALL PC PAINT 3.1
+
+The INSTALL.EXE program on the INSTALL diskette allows you to install all 
+required files onto either a floppy diskette or hard disk.  It can create a 
+PAINT.BAT batch file that automatically runs both Inset and PC Paint for you
+when you enter the command PAINT.  We recommend that you run INSTALL, 
+whether you are an experienced user or a novice.
+
+
+How to Load Files onto Your Disk withour Running Install
+
+PC Paint 3.1, Inset, utilities, and sample drawings, are compressed inside
+self-extracting archive files on the PC Paint floppy diskettes.  The
+compression technique allows us to put more files on a diskette to simplify
+diskette organization for easier installation.
+
+You may extract all or part of the files from inside a self-extracting 
+archive to a hard disk or floppy by entering the command 
+
+	<archive> <-parm> <destination> <filelist>
+
+where <archive> is the name of the archive file, <parm> is a parameter 
+(? to list parameters, T to list archive contents), <destination> is a valid 
+drive and directory pathname, and <filelist> is a list of file names to 
+extract, separated by spaces.  
+
+One large archive file is located on each of the diskettes you received with
+PC Paint, as follows:
+
+
+DISKETTE	ARCHIVE		CONTENTS
+
+INSTALL		PCP31.EXE	The PC Paint program and its utilities
+DRIVERS		PCP31U.EXE	The Inset printer utility
+				Screen and printer drivers are not archived
+DRAWINGS	PCP31D.EXE	Sample images created in various video modes
+
+
+As an example of use, if you have a hard disk, perform the following steps
+to extract all of the drawings and place them in the \IMAGES directory
+on drive C:
+
+	1.  Insert the DRAWINGS diskette in drive A:
+	2.  Enter these commands:
+
+		MD C:\IMAGES		make images directory
+		A:PCP31D C:\IMAGES	extract all drawings from archive.
+
+Other examples of usage of the self extracting archive commands are:
+
+A:PCP31 -?		list the possible command line parameters
+A:PCP31 -T		list files in the archive
+A:PCP31 C:\PCP		extract paint files to drive C: directory PCP
+A:PCP31U C:\PCP		extract printer utility files to C:\PCP
+A:PCP31 -C PCP31.DOC	display the text in PCP31.DOC file from the archive
+A:PCP31 B: *.SET	extract font files to floppy in drive B:
+
+
+HOW TO USE INSET AND PC PAINT 3.1
+
+You must have a mouse or a digitizer that emulates a mouse installed on 
+your computer before running PC Paint.  To run PC Paint, enter the command 
+PCPAINT.  The initial screen shows a video mode list.  Select a mode you 
+think you will like and a few seconds later the PC Paint menu screen will 
+appear.  You can now the mouse to create a drawing.  If the menu screen
+does not appear, then the mode you selected is not valid.  Press Alt-Q to
+quit PC Paint, then run it again and select a different mode.
+
+You must run Inset if you want to print graphic images created with PC Paint.  
+You do not have to run Inset unless you want to print graphic images, but
+if you do, then you must run Inset BEFORE the showing the image on the screen.
+  
+Before running Inset, you must set it up for the video adapter in your 
+computer (the part of the system that displays an image) and the printer your 
+computer will use to print the image.  INSTALL does this for you, but you may
+do it any time by entering the command SETUP.  Press keys to select the 
+options in the configuration menu and follow instructions.  Be sure to select 
+a video board, video mode, and printer type.  Then save the configuration 
+(F10), and quit the program (Esc).
+
+Setup creates a configuration file (IN.SET) for Inset to use, so that you do 
+not have to run it again unless you change your system configuration or 
+want to print graphic screens from a different video mode.
+
+Once Inset has been setup, you can use it immediately with any program that 
+can display a graphic image.  To load it into memory, enter the command INSET.
+The display will show the hotkey combination (Ctrl Left-Shift) to press in 
+order to invoke Inset's printing capability.
+
+To prove that Inset is working properly, run the TEST.BAT program to print 
+a test image and document on your printer.  If it doesn't work, recheck 
+your configuration and refer to the manual as needed.
+
+Now run the program that displays the graphics screen you want to print.
+For example, run PC Paint.  To do this, enter the command PCPAINT.  
+PC Paint needs no installation because video mode selection is built-in.  The 
+first screen will show your choices of video modes.  Select the same mode
+that you selected in the Setup program.  The paint screen appears.  Now you 
+can create an image using the mouse.  Refer to the manual for details on
+how to use the paint program.
+
+Once the screen is showing the image properly, invoke Inset by pressing 
+the hotkey.  Press P (print) then G (go) to print the image.  You can
+modify it first by pressing M, then C to crop the image, and so on.
+Inset's Save feature is disabled.  If you want the feature, then purchase
+the commercial version of Inset.
+
+Some images can take all of the memory available, leaving none for the 
+printing program.  If you get an out-of-memory message while using PC Paint, 
+then quit the paint program, and enter the command AF to delete Inset from
+memory.  Now run paint again, finish creating your picture, save it in
+a picture file (for example MYPAINT.PIC), and quit PC Paint.  When you are 
+ready to print the picture, display it by entering the command 
+SHOWPIC MYPAINT, then press the hotkey to invoke Inset.  Full details are
+in the manual.
+
+
+HOW TO RUN PC PAINT 3.1
+
+To execute PC PAINT, change to the directory holding the paint program files
+and enter the following command, where <options> is a list of optional
+command line parameters and <filename> is a picture file to edit:
+
+	PCPAINT <options> <filename>
+
+With no <options>, PC Paint will run and display a list of the paint program 
+video modes available on your computer.  When you select one of the valid
+modes, the paint screen will come alive.  Optional parameters are as follows:
+
+	/2	Use Hercules page 2
+	/q	Do double mouse I/O for old Microsoft mouse
+	/w	Force mouse cursor to ignore vertical retrace
+	/z	Select dragging-style pull-down menus
+	/m:V,S	Select mouse velocity V and sensitivity S (0-7)
+	/v:M	Select video mode M (other valid modes are shown below)
+
+MODE	VIDEO ADAPTER
+
+1	IBM text 80 x 25 x 16
+2	IBM mono text
+3	IBM EGA text 80 x 43 x 16
+A	IBM CGA 320 x 200 x 4
+B	STB, Tandy 320 x 200 x 16
+C	IBM CGA 640 x 200 x 2
+D	IBM EGA 640 x 200 x 16
+E	IBM EGA 640 x 350 x 2
+F	IBM EGA 640 x 350 x 4/64
+G	IBM EGA 640 x 350 x 16/64
+H	Hercules 720 x 348 x 2
+I	Plantronics 320 x 200 x 16
+J	IBM EGA 320 x 200 x 16
+K	AT&T 6300, Toshiba 3100 640 x 400 x 2
+L	IBM VGA 320 x 200 x 256/262,144
+M	IBM VGA 640 x 480 x 16/262,144
+	Video 7 VEGA Deluxe 640 x 480 x 16/64
+N	Hercules Incolor 720 x 348 x 16/64
+O	IBM VGA 640 x 480 x 2/262,144
+P	Tseng Labs VGA 800 x 600 x 2 (mode 29h)
+Q	Tseng Labs VGA 800 x 600 x 16 (mode 29h)
+
+
+Extended High-Resolution Modes
+
+The initial screen shows extended high resolution modes P and Q at the bottom 
+of the mode list.  These are non-IBM 800 x 600 resolutions available on 
+enhanced VGA boards based on Tseng Labs and Video 7 designs.  The modes may
+also work on other video boards such as those based on VGA chipsets from 
+Paradise and Cirrus Logic.  To find out whether they work on yours, 
+select the mode and wait a few seconds for the paint screen to appear.  If
+no screen appears, press Alt-Q to quit PC Paint, then try the command line
+method that follows.
+
+You may also invoke the extended high-resolution modes from the command line.
+Some modes may be available other than 800 x 600.  Consult your video board
+technical information to get a mode list.  MSC makes no guarantee that 
+PC Paint will work in these modes on your system.  Invoke a high-resolution 
+mode with the following command:
+
+	PCPAINT /V:M,<horizontal>,<vertical>,<AX register>,<BX register>
+
+Example command lines would be:
+
+for Video 7 VEGA VGA - 		PCPAINT /V:M,800,600,0x6f05,0x62
+for Everex (Cirrus) VGA -	PCPAINT /V:M,720,540,0x63
+
+Video mode M causes PC Paint to assume the same memory organization as VGA 
+BIOS video mode 12.  <horizontal> is the number of pixels across the screen 
+(e.g., 800), <vertical> is the number of pixels down the screen (e.g., 600), 
+<AX register> and <BX register> represent the contents of your computer's 
+microprocessor AX and BX registers required by BIOS to perform the Set Video 
+Mode function that puts the video board in the extended high resolution mode.
+The register values are entered in C programming language notation.  For 
+example in the value 0x6f05, the leading 0x means the following digits are 
+a hexadecimal number.
+
+Refer to the technical data in your video board's manual for information
+on the register contents required to invoke extended graphics modes.
+
+
+SUMMARY OF PC PAINT 3.1 COMMANDS
+
+In general, you will use the mouse to select pull-down menu items, or
+colors, shapes, drawing, painting, and editing functions from on-screen menus.
+However, there alternate functions you may select with keyboard commands.
+In the following tables rb means right button, and lb means left button.
+
+If you do not have a mouse, the following keys emulate its functions:
+
+	+, -			toggle drag on and off for lb, rb
+	Ins, Del		click lb, rb
+	Arrows			move the cursor up, down, left, right
+	Home, End, PgUp, PgDn	move cursor diagonally
+	Enter, Esc		accept, abort a dialogue box
+
+Other keys have the uses indicated below.
+
+ESC	toggle in and out of full screen mode (while in full-screen mode,
+	you must use the below keys to emulate mouse selections from on-screen
+	or pull-down menus).
+
+
+ALT Keys				Function Keys
+
+A	change colors			F1	picture mover icon
+B	control box			F2	marquee icon
+C	copy marquee to clipboard	F3	pencil icon
+D	drop shadow left w/ rb color	F4	eraser icon
+E	erase marquee			F5	brush icon
+F	change flood			F6	paint/flood icon
+G	toggle grid on/off		F7	lines icon
+H	flip marquee horizontal		F8	text icon
+I	invert marquee colors		F9	undo
+J	make marquee seek edge		F10	undo
+K	cut marquee			F11	flip horizontal
+L	load (see info below)		F12	put rb color under marquee
+M	make pattern of marquee		Alt-F1	picture mover icon
+N	new				Alt-F2	marquee whole window
+O	outline left w/ rb color	Alt-F3	Zoom small magnify
+P	paste clipboard to marquee	Alt-F4	clear window only
+Q	quit				Alt-F5	brush menu
+R	rotate marquee			Alt-F6	fill options icon
+S	save				Alt-F7	lines icon
+T	toggle transparent		Alt-F8	text icon
+U	undo				Alt-F9	size marquee to byte width
+V	flip marquee vertical		Alt-F10	 " to byte width & boundaries
+W	-				Alt-F11 -
+X	-				Alt-F12 -
+Y	clear clipboard
+Z	Zoom - large magnify
+
+
+Shortcuts
+
+Double click on file name:	load/save the file
+Double click on Marquee tool:	marquee the entire viewing area (also Alt-F2)
+Double click on Pencil:		magnify editing (also Alt-Z, Alt-F3)
+Double click on Brush:		display brush menu (also Alt-F5)
+Double click while polygon:	close the polygon (also click outside area)
+Double click Eraser:		erase viewing area (with rb color)
+Alt-click on FILE PIC LOAD:	load picture, but use current color palette
+Ctrl-click on FILE SAVE:	store image with relative offsets in file
+Hold shift key while dragging:	constrain to x, y, or proportional x,y
+Left click on current pattern:	toggle through 3 sets of patterns
+Right click on current pattern:	transpose lb/rb pattern color
+Left click current pattern:	make pattern of marquee lower left 32x32 bits
+Drag while ABC:			opens text region for typing text
+Alt-click in Pencil or magnify:	change lb or rb to color under cursor
+Alt while dragging tool:	move object, but freeze screen
+Right-drag eraser:		erase lb color done in previous draw
+Alt-drag eraser:		paint rb color over lb color and vice versa
+Right-click inside marquee:	copy image inside marquee to screen
+Alt-drag marquee:		paint, using marquee image as the brush
+
+
+HOW TO USE THE PC PAINT 3.1 UTILITY PROGRAMS
+
+WHATPIC <filelist> - display the size and video mode of named picture files 
+separated by spaces.  e.g. WHATPIC *.PIC.  Invoke PC Paint with the mode
+shown in order to edit the picture file using PC Paint 3.1.
+
+SHOWPIC <filelist> - display the named picture files.  If you have a multiple 
+scanning frequency monitor and one of the modern enhanced VGA cards, you can 
+display a mix of CGA, EGA, MCGA, and VGA images.  Press Enter to go to the 
+next picture, PgUp/PgDn to move the image up and down; click left button to 
+toggle crosshairs on and off, right to toggle display of X/Y coordinates.
+
+CVTPICS <video mode> <filelist> - convert a PC PAINT PLUS picture file to
+PC Paint 3.1 format.  Also converts PIC and CLP files from one video format
+to another.  Only default palettes translate properly.
+
+CAP <parameter> - resident program to capture a screen image and save it in a 
+PC Paint 3.1 file (.PIC).  Press Alt-RightShift to invoke, and Esc to quit.
+While in CAP, one of two methods saves the image. 1) To save the whole screen, 
+press Enter, type the filename, press Enter; 2) To save an area of the screen,
+move the cursor to start-of-clip and press spacebar (press a number key to 
+change cursor step rate, period (.) to change the active corner, semicolon (;) 
+to seek inward for an edge), move the cursor to end-of-clip and press Enter, 
+type the filename, press Enter.  If the filename contains a number, you may
+save screens in sequentially numbered files automatically.  Parameters are:
+
+	/k:<key><key> - change the keys used to invoke CAP, where <key> is 
+		L (left shift), R (right shift), C (Ctrl), or A (Alt).
+	/i:# - set the user software interrupt number that invokes CAP to #;
+		e.g. CAP /i5 sets CAP to be invoked with Shift-PrtSc.
+
+For further assistance on PC Paint 3.1, call product support at (503) 488-0224.
+To download picture files to your computer, call (714) 240-7459.  To discuss
+PC Paint, pictures, and demonstrations, enter GO PICS on Compuserve.
+
+
+HOW TO CONVERT PICTURE FILES BETWEEN FORMATS
+
+You may use a variety of methods to convert files between various graphics 
+formats:
+
+	1.  Use PC Paint 3.1 to load a file in one of the following formats:
+
+		PIC (PC Paint 3.1)
+		PIC-BSAVE (PC Paint Plus or PC Paint 3.1)
+		PCX (Z-Soft's PC Paintbrush)
+		GIF (Compuserve compressed)
+
+and then save the image in any of those formats or in 
+
+		IMG (Digital Research Inc.'s GEM) format.
+
+	2.  Use the CVTPICS program supplied with PC Paint 3.1 to convert 
+a PIC file created in one video mode to a PIC file that you can edit in 
+another video mode.  You must use Cvtpics to convert an EGA mode file 
+created with PC Paint Plus to EGA mode for use with PC Paint 3.1; otherwise, 
+PC Paint 3.1 will not be able to display the image properly.  You may also 
+use it to convert files from low to high resolution (such as CGA to EGA or 
+EGA to VGA), but it will not expand the picture to fill the screen.
+Finally, you may convert from high to low resolution form, but if the source
+file has more colors than the destination file, the colors in the resulting
+image will not be correct. 
+
+	3.  Use a file conversion utility program to convert between one of 
+the above formats and a format native to some other paint program.  Discount 
+coupons are supplied with PC Paint 3.1 for two different conversion programs, 
+each with its own distinct advantages:
+
+		a.  TGLPLUS (The Graphics Link Plus) from Terravision - this
+extremely powerful program not only converts between file formats used by 
+major paint programs, but it also offers outlining and conversion from
+color to dithered black and white images suitable for use in high-quality
+desk-top publishing applications.
+
+		b.  HiJaak from Inset Systems - this program comes with the 
+commercial version of Inset.  It converts between the file formats of numerous
+paint programs as TGLPLUS does, and it can create PIX files that Inset uses
+for integration with text to create professional quality graphics/text page
+layouts and manuals using a normal text processor.  It can also capture 300
+dpi images being sent to an HP Laserjet from any application program so that
+you can edit them with PC Paint 3.1.  If you have Hijaak, you can use Inset
+to print full-size images that are larger than the screen can show.
+
+
+HOW TO ANIMATE YOUR PICTURES PROFESSIONALLY
+
+You can use the SHOWPIC program supplied with PC Paint 3.1 to display a series
+of images from PIC files that you created with PC Paint 3.1.  Showpic thus
+gives you a way to give a simple graphics presentation to an audience with
+your computer because it displays the next picture each time you press the
+Enter key.
+
+However, if you want to animate your images for a truly professional-quality
+presentation, a discount coupon is provided with PC Paint 3.1 to allow you to 
+purchase GRASP (GRaphics Animation System for Professionals) from Paul Mace
+Software, Inc.  GRASP gives you a complete environment for creating animated
+graphics presentations, including its own programming language, an editor,
+sample programs, built-in help, and a run-time animator.  GRASP has built
+a reputation for state-of-the-art graphics animation, and has been used to
+create demonstrations in television commercials as well as computer trade
+shows.
+
+
+HOW TO ORDER MGI'S PICTUREPAKS
+
+PC Paint 3.1 comes with a library of 18 images from Publisher's PicturePak(TM):
+three extensive collections of idea-generating pictures and symbols in the 
+PC Paintbrush file format (extension .PCX).  Use PC Paint 3.1 to edit these 
+640 x 480-pixel images for use in your publications and presentations.
+
+The Eye Openers Series, the library from which the samples are taken, includes
+three editions of business related graphics.  The entire series of 565 pictures
+sells for $250.00 (individual editions sell for $99.95).  Each edition includes
+3.5" or 5.25" diskettes and a 48 page Reference Guide/Picture Catalog.
+
+The Eye Openers Series - $250.00/Item PUB-AP - Set of all three editions, 565
+pictures in all.
+
+The Executive & Management Edition - $99.95/Item PUB-EP - 
+Includes 209 pictures in these categories:
+
+        Highlights & Introductions      Borders & Backgrounds
+        Words & Symbols                 Related Symbols & Icons
+
+The Finance & Administration Edition - $99.95/Item PUB-FP - 
+Includes 178 pictures in these categories:
+
+        Time & Money                    Communications & Technology
+        Productivity & Performance      Related Symbols & Icons
+
+The Sales & Marketing Edition - $99.95/Item PUB-SP - 
+Includes 178 pictures in these categories:
+
+        Goals & Motivation              Travel & Entertainment
+        People & Places                 Related Symbols & Icons          
+
+
+All items shipped UPS.  For other shipping methods please call MGI Ordering &
+Information at (804)747-6991 (9-8 EST) (No P.O. Box shipping address please).
+        Number of editions       1-2      3-5     6-8    9 & over
+        ------------------------------------------------------------
+        Surface                 4.00     6.00    8.00  3% of total $
+        Air                     7.00    12.00   18.00    Call
+        Rush                   16.00    25.00   28.00    Call
+
+Ask about MGI's complete line of electronic business art for use with Byline,
+Freelance Plus, PageMaker, PC Paintbrush, PFS:First Publisher, Show Partner,
+Storyboard, Ventura Publisher, VideoShow, WordPerfect 5.0, and other PC and
+Mac programs.  
+
+
+TRADEMARKS
+
+PC Paint: MSC Technologies, Ins.; PicturePak: MGI; Byline: Ashton-Tate;
+WordPerfect: WordPerfect Corp.; Freelance Plus: Lotus Development Corp.;
+PageMaker: Aldus Corp.; PC Paintbrush: ZSoft; PFS:First Publisher: 
+Software Publishing Corp.; Ventura Publisher: Ventura Software Inc.; 
+Storyboard: IBM; Show Partner: Brightbill-Roberts & Co. Ltd.; 
+VideoShow: General Parametrics; Mac: Apple Computer Inc.
+GRASP:  Paul Mace Software, Inc.; FONTRIX: Data Transforms Inc.;
+TGLPLUS:  Terravision, Inc.; INSET and HIJAAK:  Inset Systems, Inc.
+                         PicturePak ORDER FORM
+
+Please mail your order to:                      Or Call:
+Marketing Graphics Incorporated                 (804)747-6991
+4401 Dominion Boulevard, Suite 210              9:00am to 8:00pm EST
+Glen Allen, Virginia 23060-3379 USA             FAX: (804)747-0879
+
+Sold To: (Please add a Ship To: address if other than Sold To:)
+
+Name____________________________________________________________________
+
+Company_________________________________________________________________
+
+Address_________________________________________________________________
+
+City___________________________State____________________Zip_____________
+
+Phone (_________)_______________________________________Date___/___/____
+
+                              Method Of Payment:
+
+[ ] Check or money order                [ ] VISA   [ ] MasterCard
+[ ] C.O.D.                              Card No.
+[ ] Purchase Order attached (30 days	| | | | | | | | | | | | | | | | |
+    net, new accounts please include
+    three major trade references)       Name on card_____________________
+
+    P.O No.________________________     Expiration Date____/____
+
+                                        Signature________________________
+                                              (Required for credit cards)
+
+                             Ordering Information:
+                                                Format
+       Item                                      5.25"    Unit    Total
+Qty.   Code              Description            or 3.5"  Price    Price
+
+____| PUB-AP | All 3 Editions (Save $49.85)     |_____| 250.00  |______
+
+____| PUB-EP | Executive & Management Edition   |_____|  99.95  |______
+
+____| PUB-FP | Finance & Administration Edition |_____|  99.95  |______
+
+____| PUB-SP | Sales & Marketing Edition        |_____|  99.95  |______
+
+                                                     Sub-Total  |______
+
+             Add Shipping Charges [ ] Surface [ ] Air [ ] Rush  |______
+
+                         Add 4.5% tax if delivered in Virginia  |______
+
+                                                  Total Amount  |______
+Reference:  MSC

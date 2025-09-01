@@ -1,0 +1,542 @@
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 1
+
+
+
+
+
+                        Table of Contents
+                        -----------------
+
+
+ Topic                                                 Page
+ -----                                                 ----
+
+   Features and Overview .............................. 2
+
+   Using PKXARC ....................................... 3
+   
+   Examples ........................................... 4
+   
+   Using PKXARC in a batch file ....................... 5
+
+   Multitasking and Network support ................... 5
+   
+   PKXARC messages .................................... 6
+   
+   PKXARC Revision history ............................ 7
+
+   General Information ................................ 11
+
+   Software License ................................... 12
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 2
+
+
+
+Features
+--------
+
+  o THE FASTEST ARCHIVE EXTRACTION - EVER.
+
+  o Data integrity ensured by 16 bit Cyclic Redundancy Check.
+
+  o Supports the PKARC file squashing and archive comment features.
+  
+  o Decrypts files encrypted with the PKARC encryption option.
+  
+  o Superior file buffering.
+
+  o Multitasking and Network support.
+
+  o Not Copy Protected
+
+
+
+Overview
+--------
+
+An  archive  is  a  collection  of  one or more files placed into a 
+single archive file.  A file extension of .ARC is usually  used  to 
+denote  an  archive.  Each file in an archive is compressed to save 
+disk space, backup storage space, and file transfer time.   When  a 
+file  is  archived,  it  is  analyzed  and compressed with the most 
+optimal data compression method for that file.  Every  file  in  an 
+archive  is  stored  with a 16-bit Cyclic Redundancy Check (CRC) to 
+ensure data integrity when the file is extracted from the archive.
+
+PKXARC  is  a  FAST! archive extraction utility that extracts files 
+from an archive and restores them to their original name, size, time 
+and  date.   It  is  completely  compatible  with  SEA's  (Software 
+Enhancement Associate's) ARC program and  PKWARE's  FAST!   archive 
+create/update  utility  PKARC,  but is many times faster than SEA's 
+ARC program and faster than  ANY  OTHER  archive  extract  utility.  
+PKXARC achieves its speed through the use of C language with highly 
+optimized assembly language routines, and advanced  file  buffering 
+techniques.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 3
+
+
+
+Usage: PKXARC [options] archive [d:\path] [file...]
+
+
+Options are:
+
+  -r = replace existing file(s)         -v = verbose listing of archive(s)
+  -c = extract file(s) to the screen    -p = extract file(s) to the printer
+  -t = test archive integrity           -l = display software license
+  -e,-x = extract file(s) 
+  -g<password> = extract garbled file with password
+
+  archive  Archive file name, wildcards *,? ok.  Default extension 
+	   is .ARC
+
+  d:path\  Output drive and/or path.  Note that only one output
+	   path can be specified, and it must be seperated from the 
+	   list of files to extract by one or more spaces.  The
+	   output path can be anywhere on the command line after
+	   the options though.
+
+  file     Name(s) of files to extract, list, or test.
+	   Wildcards *,? okay.  Default is ALL files.
+
+
+-r    Normally,  PKXARC  will  prompt  you  with  "Overwrite?"   if 
+      extracting  a file from an archive will overwrite an existing 
+      file.  The  Replace  option  will  overwrite  existing  files 
+      without query.
+
+-c    This option will extract files to the screen.
+
+-p    This  option  will extract files to the printer.  PKXARC will 
+      print a form feed after each file.
+
+-t    This option  will  test  archive  integrity.   Particularily, 
+      PKXARC  will  calculate  each  files CRC value and compare it 
+      with the stored value within the archive.  A message will  be
+      displayed to indicate the integrity of each file.
+        
+-v    This option is used to list the contents of an  archive.   It 
+      will  list  the  filename, length of file before compression, 
+      method of compression, size  after  compression,  compression 
+      ratio, and the stored CRC value.
+      
+-l    This option will display PKWARE's software license and address.
+
+-e    These options will extract files from an archive.  This is the
+-x    default for PKXARC if no other options are specified.  The -e
+      and -x options do not have to be specified for this.  They are
+      only present for compatibility with SEA's ARC  program  syntax.
+      The -e and -x options can not be used with other options.
+
+-g<password>
+      Extract encrypted (garbled) files with the given password.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 4
+
+
+        
+Examples:
+
+PKXARC a:* b:
+  - Extract  all  files  from  all  archives  on  drive  A: storing 
+    extracted files on drive B:.
+
+PKXARC sigdir1 c:
+  - Extract all files from the archive SIGDIR1.ARC in  the  current 
+    drive  &  subdirectory  storing  extracted files in the current
+    directory on drive C:.
+
+PKXARC c:\lotus\tax *.wks
+  - Extract  all  .WKS  files from archive C:\LOTUS\TAX.ARC storing 
+    extracted files in the current drive & subdirectory.
+
+PKXARC -r c:\public\* d:\ *.doc *.txt
+  - Extract all .DOC and  .TXT  files  from  all  archives  in  the 
+    directory  C:\PUBLIC,  storing  the extracted files in the root 
+    directory of  drive  D:.   Overwrites  existing  files  in  D:\ 
+    without query.
+
+PKXARC -v c:\download\*
+  - Display a verbose listing of  all  archives  in  the  directory 
+    C:\DOWNLOAD.
+
+PKXARC -c utility *.doc
+  - Extract  all .DOC files form the archive UTILITY.ARC displaying 
+    extracted files on the console.
+
+PKXARC -p utility *.doc
+  - Same as above, except extracted files  are sent to the printer.
+
+PKXARC -t utility
+  -Test the integrity of the archive UTILITY.ARC.
+
+PKXARC -t c:\download\*
+  -Test the validity of all archives in the directory C:\DOWNLOAD.
+  
+PKXARC -gsecret private
+  - Extract all the files from the archive PRIVATE.ARC using SECRET 
+    as the decryption password.  Note that the password is NOT case 
+    sensitive.   The "-g" option must be the last option specified, 
+    and must  be  immediately  followed  by  the  password  without 
+    intervening spaces.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 5
+
+
+
+Using PKXARC in a batch file
+---------------------------
+
+If you are using PKXARC from a batch file, you can test  if  PKXARC 
+experienced  an  error  using  the DOS errorlevel variable.  PKXARC 
+returns zero errorlevel if no errors have occurred.   If  an  error 
+occurred, PKXARC will return the following error codes:
+
+abort exit codes:
+  2 - out of memory
+  3 - no archives found to extract
+  4 - can't open archive file
+  5 - read error on archive
+  6 - internal table overflow
+  7 - disk full
+
+non-abort (warning) exit codes:
+  1 - bad CRC, file is not an archive, unknown compression method,
+      can't create a file, squeeze table is invalid or no files
+      found to extract.
+
+
+Mulitasking and Network Support
+-------------------------------
+
+PKXARC  automatically  opens  all  archives  with SHARE "deny write 
+access"  under  DOS  3.0  or  above,  so  that  they  can  be  read 
+concurrently  by other tasks.  This is especially useful when using 
+PKXARC on Local Area Networks (LANs) or with multi-tasking software.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 6
+
+
+
+PKXARC messages
+---------------
+
+Warning!  File XXXXXXXX.YYY already exists!  overwrite (y/n)?
+  - A file to be extracted from the archive already exists on disk.  
+    Answer  "y"  to  extract  the  file from the archive anyway and 
+    overwrite the existing file, "n" to not extract the  file  from 
+    the archive.  Use the "-r" command line option to suppress this 
+    warning.
+
+Unknown packing method for: XXXXXXXX.YYY
+  - The file is compressed  or  encoded  in  a  unknown  way.   The 
+    archive is either corrupt or requires a later version of PKXARC 
+    for proper extraction.
+
+Warning!  File XXXXXXXX.YYY fails CRC check
+  - The Cyclic Redundancy  Check  calculation  did  not  match  the 
+    stored value.  The file is probably corrupt.
+
+XXXXXXXX.YYY is not an archive
+  - The file specified is either not an archive, or is corrupt.
+
+Archive length error
+  - A end of file token  was  not  found  for  a  file  within  the 
+    archive.  The archive is corrupt.
+
+PKXARC: can't find XXXXXXXX.YYY
+  - The given archive filename could not be found.
+
+PKXARC: Can't read archive: XXXXXXXX.YYY
+  - The archive could not be opened.
+
+PKXARC: Can't create: XXXXXXXX.YYY
+  - The  output file could not be created.  The output directory is 
+    invalid or full.
+
+PKXARC: File has invalid decode tree
+  - The Huffman decode tree for the file is invalid.   The  archive 
+    is corrupt.
+
+PKXARC: Disk full
+  - The destination disk is full.
+
+PKXARC: Internal table overflow
+  - An internal decode table overflowed.  The archive is corrupt.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 7
+
+
+
+PKXARC history
+--------------
+
+Soon  after  the archive file format was introduced into the public 
+domain, it became popular and many BBS files were  transfered  this 
+way.   The  archive format is a convenient way to put several files 
+into one and compress them for effecient disk storage  and  reduced 
+transfer time, in one step.
+
+However, the archive utility was much slower  at  extracting  files 
+than  equivalent  UnSQueeze type programs.  In the inevitable quest 
+for faster archive file extraction, PKXARC was created.
+
+
+Changes in PKXARC version 3.5
+-----------------------------
+
+Extraction of Crunched files are up to 25% faster  and  unSquashing 
+is up to 50% faster than ever before.
+
+New -e and -x options have been added for ARC compatibility.
+
+The  DOS  switch  character  is  now  supported  as  a valid option 
+seperator.
+
+The '-' character can  be  used  in  addition  to  the  DOS  switch 
+character for options.
+
+The -g "arc garble" decryption option is supported.
+
+Both '/' and '\' characters are allowed in pathnames.
+
+Multitasking and Network support has been added to PKXARC.
+
+Wildcard file matching using '?' in the extension now works exactly 
+like DOS directory wildcard matching.
+
+To  help  facilitate  the  automated  use of PKXARC, PKXARC will no 
+longer abort to DOS when a bad archive  is  encountered,  but  will 
+continue  on  to the next archive.  PKXARC's return codes have been 
+extended to include errors  that  do  not  cause  PKXARC  to  abort 
+immediately (warnings).
+
+Damaged archive handling has been vastly improved.  PKXARC will  no 
+longer  hang up on badly damaged, truncated, or encrypted archives.  
+In addition, PKXARC will automatically skip bad archive headers and 
+will  attempt  to  extract  as many files from a damaged archive as 
+possible.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 8
+
+
+
+Changes in PKXARC version 3.4
+-----------------------------
+
+Support of "squashed" files created by PKARC 2.0  has  been  added.  
+Squashing is a variation of Dynamic Ziv-Lempel-Welch encoding which 
+can yield a 10% or better compression ratio for large  text  files.  
+Squashed  files  typically  unsquash  15%  faster  than  equivalent 
+crunched files.
+
+In order to be consistent with the command  syntax  of  PKARC,  the 
+requirement   for  dashes  ("-")  to  be  given  before  individual 
+filenames to extract or list has been removed.
+
+Error  recovery  for  damaged archives has been improved.  Previous 
+versions of PKXARC would  occasionally  hang  up  while  processing 
+damaged  archives.   PKXARC version 3.4 has improved error recovery 
+allowing at least the partial extraction of files  from  a  damaged 
+archive.
+
+
+Changes in PKXARC version 3.3
+-----------------------------
+
+Support of the PKARC archive comment  feature  was  added.   PKXARC 
+will  automatically  display an archive comment if it is present in 
+an archive.
+
+When extracting files to the  printer,  PKXARC  will  now  print  a 
+form-feed character after each file.
+
+Extraction speed has been increased by 5% for Crunched files.
+
+
+Changes in PKXARC version 3.2
+-----------------------------
+
+The  archive test function "/t" was added to PKXARC.  This function 
+tests the integrity of the archive without extracting the files  to 
+disk.  Specifically, the CRC for each file is computed and compared 
+against the correct value stored in the archive.
+
+Extraction speed has been increased by 5% for most files.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 9
+
+
+
+Changes in PKXARC version 3.1
+-----------------------------
+
+A  minor  bug  in  the  pattern  matching  code for individual file 
+specifications when using the wildcard "*" was fixed.  For example, 
+previous versions of PKXARC would not correctly match "flight*.com" 
+to the exact filename "flight.com".  This  has  been  corrected  in 
+PKXARC version 3.1.
+
+The  verbose archive listing now displays the total number of files 
+in the archive.
+
+Extraction speed has been increased  5-10%  for  all  decompression 
+methods.
+
+A  "jr"  version  of  PKXARC was created for computers with limited 
+memory.  PKXARCjr requires only 74K of free memory to run,  but  is 
+slightly  slower than the standard version for most archives.  Both 
+versions will run on  any  type  of  computer  providing  there  is 
+sufficient free memory.
+
+
+Changes in PKXARC version 3.0
+-----------------------------
+
+The following functions have been added to PKXARC version 3.0:
+
+Extraction of files to the console or printer.
+The ability to display a verbose archive listing.
+
+
+Changes in PKXARC version 2.7
+-----------------------------
+
+Extraction performance of Squeezed files  has  been  improved  more 
+than 60%.  PKXARC version 2.7 can extract a Squeezed file more than 
+8 times faster than ARC 5.1.
+
+The message displayed when a  file  is  being  extracted  has  been 
+enhanced to indicate the compression method used to store the file.
+
+Message                 Meaning
+-------                 -------
+Extracting   The file was Stored.
+un-Packing   The file was Packed with non-repeat packing.
+uncrunching  The file was crunched with old style Ziv-Lempel-Welch compression.
+unSqueezing  The file was Squeezed with Huffman encoding.
+unCrunching  The file was Crunched with Dynamic Ziv-Lempel-Welch compression.
+unSquashing  The file was Squashed with Dynamic Ziv-Lempel-Welch compression.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 10
+
+
+
+Changes in PKXARC version 2.6
+-----------------------------
+
+Extraction  performance  for  all  compression   types   has   been 
+significantly  improved  over  PKXARC  version 2.5.  Files that are 
+crunched with older versions of ARC (pre 5.x)  extract  5%  faster.  
+Squeezed  files  extract  15% faster.  Files that are Crunched with 
+ARC 5.x extract 20% faster.
+
+
+Changes in PKXARC version 2.5
+-----------------------------
+
+The ability to extract specific files was added.  PKXARC can now be 
+passed  the specific names of files to be extracted from an archive 
+on the command line.
+
+
+Changes in PKXARC version 2.4
+-----------------------------
+
+Performance  for  extracting  dynamic  Ziv-Lempel  files  has  been 
+improved. Files which are identified as "Crunched" (with a  capital 
+C) on the ARC verbose listing extract 15-20% faster than before.
+
+When  a  "Disk  full"  error  occurred, previous versions of PKXARC 
+would leave an empty or incomplete file on the  disk.   PKXARC  now 
+deletes  any  incomplete  files  before aborting with a "Disk full" 
+error.
+
+
+
+Changes in PKXARC version 2.3
+-----------------------------
+
+The  ability  to extract dynamic Ziv-Lempel-Welch encoded files was 
+added.  Version  5.0  of  ARC  introduced  a  new,  more  efficient 
+variation  of Ziv-Lempel "Crunching".  PKXARC can now extract files 
+Crunched with this method, approximately 3 times  faster  than  ARC 
+5.1.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 11
+
+
+
+General Information
+-------------------
+
+PKXARC  will  run on any IBM PC/XT/AT/RT/jr/Portable/Convertible or 
+any MS-DOS compatible computer running PC/MS-DOS 2.0 or higher with 
+a minimum of 128K free RAM.
+
+IBM is a registered trademark of the International Business Machine
+Corporation.
+MS-DOS is a registered trademark of Microsoft Inc.
+
+
+If you have any questions or comments about PKARC send them to Phil 
+Katz at:
+
+RBBS-PC of FARGO, Loren Jones SYSOP
+Fargo, North Dakota
+701-293-5973
+300/1200/2400 baud, 24 hours a day
+
+or
+
+Exec-PC IBM BBS, Bob Mahoney SYSOP
+Shorewood, Wisconsin
+414-964-5160
+300/1200/2400 baud, 24 hours a day
+
+
+Special  thanks to Loren Jones, Bob Mahoney, Alan Losoff, Gene Alm, 
+Mike Shawaluk, Paul Waldinger,  Arny  Krueger,  Mark  Tellier,  Joe 
+Vincent,  David Wyatt and all those who have helped with the PKXARC 
+effort.
+
+PKXARC   FAST!   Archive Extract Utility   Version 3.5  04-27-87    Page 12
+
+
+
+License
+-------
+
+Copyright (c) 1986,1987 PKWARE, Inc.  All Rights Reserved.
+
+You are free to use, copy and distribute PKXARC for noncommercial use IF:
+
+        NO FEE IS CHARGED FOR USE, COPYING OR DISTRIBUTION.
+
+        IT IS NOT MODIFIED IN ANY WAY.
+
+Clubs  and user groups may charge a nominal fee (less than $10) for 
+expenses and handling while distributing PKARC.
+
+Site licenses, commercial licenses and custom versions of PKARC and 
+PKXARC  are  available.   Write  to  the  address  below  for  more 
+information.
+
+This program is provided AS IS without any warranty,  expressed  or 
+implied,  including  but  not  limited  to fitness for a particular 
+purpose.
+
+If  you  find  PKXARC  fast,  easy,  and  convenient  to   use,   a 
+contribution  of  $20 would be appreciated.  With each contribution 
+of $45 or more you will be registered to receive  a  diskette  with 
+the  next version of PKARC and PKXARC when available.  Please state 
+the current versions of PKARC  and  PKXARC  that  you  have.   Send 
+contributions to:
+
+PKWARE, Inc.
+7032 Ardara Avenue
+Glendale, WI 53209
+
+

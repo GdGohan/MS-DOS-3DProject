@@ -1,0 +1,789 @@
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 1
+
+
+
+
+                        Table of Contents
+                        -----------------
+
+
+
+Topic                                                 Page
+-----                                                 ----
+
+  Features and Overview ..............................  2
+
+  Using PKARC
+      Add files to an archive ........................  3
+      Update files to an archive .....................  4
+      Freshen files in an archive ....................  4
+      Move files to an archive .......................  4
+      Delete files in an archive .....................  5
+      Encrypting files ...............................  5
+      Verbose listing of files in an archive .........  6
+
+  PKARC archive commenting feature ...................  7
+
+  Compatibility options .............................. 10
+
+  PKARC configuration file ........................... 11
+
+  Using a RAMdisk with PKARC ......................... 12
+
+  Network and Multitasking support ................... 12
+
+  Using PKARC in a batch file ........................ 12
+
+  PKARC Error Messages ............................... 13
+
+  PKARC revision history ............................. 15
+
+  General Information ................................ 18
+
+  Software License ................................... 19
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 2
+
+
+
+Features
+--------
+
+  o THE FASTEST CREATION AND UPDATING OF ARCHIVES - EVER.
+
+  o Highest compression ratios with state-of-the-art Enhanced
+    Dynamic Ziv-Lempel-Welch Crunching and Squashing.
+
+  o Unique archive commenting capability.
+
+  o Data integrity ensured by 16 bit Cyclic Redundancy Check.
+
+  o Superior file buffering.
+
+  o Configuration file option.
+
+  o Multitasking and Network support.
+
+  o Not Copy Protected
+
+
+
+Overview
+--------
+
+An archive is a collection of one  or  more  files  placed  into  a 
+single  archive  file.  A file extension of .ARC is usually used to 
+denote an archive.  Each file in an archive is compressed  to  save 
+disk  space,  backup storage space, and file transfer time.  When a 
+file is archived, it is  analyzed  and  compressed  with  the  most 
+optimal  data  compression  method for that file.  Every file in an 
+archive is stored with a 16-bit Cyclic Redundancy  Check  (CRC)  to 
+ensure data integrity when the file is extracted from the archive.
+
+PKARC is a FAST!   archive  update/create  utility  that  generates
+archives.  It is upward compatible with SEA's (Software Enhancement
+Associate's) ARC program and  PKWARE's  FAST!   archive  extraction
+utility PKXARC, but is many times faster than SEA's ARC program and
+faster than ANY OTHER archive utility.  PKARC achieves its speed by
+combining  the  best  of  C language with highly optimized assembly
+language routines, and by advanced file buffering techniques.  With
+version  1.1  of  PKARC,  an  Enhanced  Ziv-Lempel-Welch  Crunching
+technique is employed which can result in an  up  to  a  40%  space
+savings  over  ARC.   With  version 2.0 of PKARC, a new compression
+method  called  "Squashing"  is  used  which  can  save  up  to  an
+additional 10% or more for large files.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 3
+
+
+
+Usage: PKARC [compatibility options] options archive [filename...]
+
+Compatibilty options are:
+
+  oc  = old compression (disables Squashing)
+  ot  = old datestamping method
+  otc = both old compression and datestamping
+  nc  = New compression (enables Squashing)
+  nt  = New datestamping method
+  ntc = Both new compression and datestamping
+
+Options are:
+
+  a = add files to archive         d = delete files from archive
+  f = freshen files in archive     m = move files to archive
+  u = update files in archive      v = verbose listing of archive
+  l = display software license     c = add/update file comments
+  x = add archive comment          g<password> = encrypt file(s) w/password
+
+
+
+Adding files to an archive
+--------------------------
+
+This  option is used to add files to an existing archive, or create
+a new archive with the specified files.  This is  the  most  common
+use  of  PKARC.  If no list of files is given, all the files in the
+current directory will be added.  Examples:
+
+PKARC a stuff
+
+will collect all the files in the current directory, and place them
+in the archive STUFF.ARC
+
+PKARC a a:manuals c:\utils\*.doc c:\utils\*.txt
+
+will collect all files with an extension of .DOC  or  .TXT  in  the
+directory C:\UTILS\ and place them in the archive A:MANUALS.ARC.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 4
+
+
+
+Updating files to an archive
+----------------------------
+
+This option works the same as the Add option,  with  the  exception
+that if a file already exists within an archive, it will be updated
+only if the datestamp of the file on the disk is  dated  after  the
+file  within  the  archive.   This option can be used to prevent an
+earlier version of a file from overwriting a later version which is
+in an archive.  For example:
+
+PKARC u manuals *.doc *.txt
+
+will  collect all files with an extension of .DOC or .TXT and place
+them in the archive MANUALS.ARC.  If however, a file already exists
+in  the  archive  and  on  the  disk  (say  STARTREK.DOC), the file
+STARTREK.DOC will be added to the archive only if it is dated later
+than  the  version already in the archive.  If the file on the disk
+has an earlier date, then the version in the archive will remain.
+
+
+
+Freshening files in an archive
+------------------------------
+
+This option is used to ensure that  an  archive  contains  all  the
+latest  versions of its files.  The Freshen function works like the
+Update function, except it will not cause new files to be added  to
+the archive.  For example:
+
+PKARC f arcutil b:*.*
+
+will  go  through  all the files on drive B and look for files that
+are in already in the archive, but with a later date.  If  a  later
+version is found, it will be updated in the archive.
+
+
+
+Moving files to an archive
+--------------------------
+
+This  option  works  exactly like the Add function, except that the
+original  files  are  deleted  from  the  disk   after   successful
+archiving.  The files are deleted only after the archive is created
+and completed, and no errors have occurred.  If  any  errors  occur
+during the archiving process (such as disk full) the original files
+will not be deleted.  For example:
+
+PKARC m cfiles *.c
+
+will add all files with an extension .C to the archive  CFILES.ARC.
+After  all  the  files have been successfully added to the archive,
+they will be deleted from the disk.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 5
+
+
+
+Deleting files from an archive
+------------------------------
+
+This option is used to delete files from within  an  archive.   For
+example:
+
+PKARC d games *.bas
+
+This will delete all files with the extension .BAS from the archive
+GAMES.ARC.
+
+
+
+Encrypting ("garbling") files
+-----------------------------
+
+This  option  allows  a  file  to  be  password  protected.   After
+encryption,  this  password must be supplied to the archive extract
+program, such as PKXARC, to properly extract the file.  For example:
+
+pkarc agsecret private personal.doc
+
+will add the file PERSONAL.DOC to  the  archive  PRIVATE.ARC.   The
+file  PERSONAL.DOC  will  be  encrypted  using the password SECRET.
+Note that the password is NOT case sensitive.  The G option must be
+the  last  option  specified  to  PKARC,  and  must  be immediately
+followed by the password without intervening spaces.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 6
+
+
+
+Verbose listing of an archive
+-----------------------------
+
+This  option  is  used  to  list  the  contents of an archive.  The
+listing is in the following format:
+
+Filename        Length   Method     Size   Ratio    Date      Time    CRC
+--------        ------   ------    ------  -----    ----      ----    ---
+FILENAME.EXT    nnnnnn  aaaaaaaa   nnnnnn   nn%   mm-dd-yy  hr-mm-ss  xxxx
+
+The  length is the true length of the file.  The method is the data
+compression technique used on the file and is one of the following:
+
+Stored    The file was Stored.
+Packed    The file was Packed with non-repeat packing.
+Squeezed  The file was Squeezed with Huffman encoding.
+crunched  The file was crunched with old sytle Ziv-Lempel-Welch compression.
+Crunched  The file was Crunched with Dynamic Ziv-Lempel-Welch compression.
+Squashed  The file was Squashed with Dynamic Ziv-Lempel-Welch compression.
+
+The size is the resulting size of the file after  compression,  and
+the  ratio  is  the percentage of file space saved.  For example, a
+file with a length of 10,000 and a  size  of  2,500  would  have  a
+savings ratio of 75%.
+
+The CRC is the Cyclic Redundancy Check value for  the  file.   This
+can  be  used to determine if two files are the same without having
+to actually extract the files.  If the CRC values for two files are
+the same, the files themselves are likely to be the same as well.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 7
+
+
+
+PKARC Archive File Comments Feature
+-----------------------------------
+
+One  of  the  unique  features  of  PKARC is the ability to store a
+comment with an archive, and optionally a comment for each file  in
+an archive, similar to the file descriptions found on many Bulletin
+Board Systems.  The archive comment is automatically displayed when
+the archive is manipulated by PKARC version 1.2 or later and PKXARC
+version 3.3 or later.  Each file in  an  archive  can  be  given  a
+comment  which  can be displayed with the verbose listing function.
+
+Following  the  V option with letter C will cause the file comments
+to be displayed.  For example:
+
+PKARC vc utility
+
+will display the files in the archive UTILITY.ARC with the archive
+file comments in the following format:
+
+Filename        Comment                             Date      Time    CRC
+--------        --------------------------------    ----      ----    ---
+FILENAME.EXT    cccccccccccccccccccccccccccccccc  mm-dd-yy  hr-mm-ss  xxxx
+
+The archive comment and file comments can be up to 32 characters in
+length.
+
+
+If the A,U,F, or M options are followed  by  a  X,  prompting  will
+occur for the archive comment.  For example:
+
+PKARC ax datafils *.dat
+
+will   add  all  files  with  an  extension  .DAT  to  the  archive
+DATAFILS.ARC and prompt for the archive comment for DATAFILS.ARC.
+
+
+If  the  A,U,F,  or  M  options are followed by a C, prompting will
+occur for a file comment after each file is added to  the  archive.
+For example:
+
+PKARC ac datafils *.dat
+
+will   add  all  files  with  an  extension  .DAT  to  the  archive
+DATAFILS.ARC.  After each file is  placed  into  the  archive,  the
+comment for that file can be entered.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 8
+
+
+
+The  C  and  X options from above can be combined to prompt for the
+archive comment and the  file  comments  at  the  same  time.   For
+example:
+
+PKARC acx datafils *.dat
+
+will  add  all  files  with  an  extension  .DAT  to  the   archive
+DATAFILS.ARC  and  cause  prompting for the archive comment and the
+file comments.
+
+
+
+The  C  option  can  be  used  to add or update file comments.  For
+example:
+
+PKARC c programs
+
+will go through all files in the archive  PROGRAMS.ARC  and  prompt
+for  a comment for each file.  Comments can be updated selectively,
+such as:
+
+PKARC c programs spoolkey.sys
+
+will allow the file comment for the specified file to be  added  or
+changed.
+
+
+The X option can be used to add or update the archive comment.  For
+example:
+
+PKARC x programs
+
+will add or update the archive comment for the archive PROGRAMS.ARC.
+
+
+The  C  and  X options from above can be combined to prompt for the
+archive comment and the  file  comments  at  the  same  time.   For
+example:
+
+PKARC cx programs
+
+will add or update the archive comment and the  file  comments  for
+the archive PROGRAMS.ARC.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 9
+
+
+
+NOTE: The comments are stored in a way totally transparent to SEA's
+      ARC program and and have no effect on the operation of ARC.
+
+      However,  because  SEA's  ARC  program does not support these
+      advanced features, ARC will truncate  the  comments  from  an
+      archive  when  modifying it.  Using SEA's ARC program to add,
+      update, move, freshen or delete files from  an  archive  will
+      cause  all  comments  to  be lost.  If you wish to retain the
+      comments within an archive, it is recommended that the use of
+      SEA's ARC program be avoided.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 10
+
+
+
+Compatiblity options
+--------------------
+
+OLD compatibility options:
+
+These are available when compatibility with less  advanced  archive
+programs such as SEA's ARC program is needed, or when archives need
+to be used on other non MS-DOS machines for which PKARC and  PKXARC
+are not yet available.
+
+  oc  = old compression (no Squashing)
+  ot  = old datestamping method
+  otc = both old compression and datestamping
+
+The  "oc"  compatibility  option  prevents  PKARC  from  using  the 
+compression method called Squashing.  In general, Squashing  is  up 
+to  twice  as  fast  as  other  compression  methods and compresses 
+significantly better than other  methods  as  well.   Most  archive 
+programs  currently  or  soon  to be available for other computers, 
+such as  CP/M  machines  and  the  Amiga  will  support  Squashing. 
+However,  some  archive programs such SEA's ARC program do not have 
+the  capability  to  deal  with  this  more  advanced   compression 
+technique.
+
+The  "ot" compatibility option forces PKARC to follow SEA's archive
+datestamping method.  By default, PKARC sets the time and  date  of
+an  archive  to  current time and date when an archive is modified.
+SEA'a ARC program will set the time and date of an archive to  that
+of the latest file within the archive.  While most users prefer the
+former method, this option is available for users  who  prefer  the
+SEA datestamping method.
+
+
+New compatibilty options:
+
+These options are the default for PKARC and do not normally need to 
+be specified.  However, if the PKARC config file feature is used to 
+revert  to  SEA compatibility, the new compatibility options can be 
+used to  overide  the  config  file  settings  and  enable  PKARC's 
+advanced features.
+
+  nc  = New compression (enables Squashing)
+  nt  = New datestamping method
+  ntc = Both new compression and datestamping
+
+If needed, both old and new compatibilty options can  be  specified
+at  the  same  time,  but all compatibilty options should be listed
+before the normal options.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 11
+
+
+
+PKARC Config File Option
+------------------------
+
+In   addition   to   the   command  line  compatibilty  options,  a
+configuration file for PKARC  can  be  used  to  specify  backwards
+compatibility  modes.   The  following strings can be placed in the
+config file:
+
+SQUASH=ENABLE
+SQUASH=DISABLE
+ARCTIME=CURRENT
+ARCTIME=LATEST
+
+any other text in the config file will be ignored.
+
+The SQUASH= string enables or disables Squashing  as  described  in
+the   section   "Compatibility  Options".   The  default  value  is
+SQUASH=ENABLE.
+
+The ARCTIME= string specifies the datestamping  method  used.   The
+default is ARCTIME=CURRENT.
+
+If  necessary,  the  config file settings can be overidden with the
+command line compatibility options.
+
+The configuration file should be an ordinary ASCII text  file,  and
+be  named  PKARC.CFG.   This  file can be created with the COPY CON
+command or most editors or word processors that can save  an  ASCII
+file.
+
+PKARC  can  be  told  where  to  find  the  config file through DOS
+environment strings.  PKARC searches the environment for the string
+PKARC.CFG=pathspec.  For example, entering:
+
+SET PKARC.CFG=C:\UTILS
+
+at the DOS prompt, or in your AUTOEXEC.BAT file, will tell PKARC to 
+look  in  the  C:\UTILS\  directory for the file PKARC.CFG.  If the 
+string PKARC.CFG=pathspec is not in the DOS environment, PKARC will 
+look in the current directory for the file PKARC.CFG.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 12
+
+
+
+Using a RAMdisk with PKARC
+--------------------------
+
+PKARC sometimes creates one or two temporary files while  archiving
+files.  The default drive for these files is the current drive.  In
+order to increase performance, PKARC can be told which drive and/or
+subdirectory  to  use  for  temporary files through DOS environment
+strings.   PKARC  searches   the   environment   for   the   string
+PKARCTMP=pathspec.    For   compatibility   with  ARC,  the  string
+ARCTEMP=pathspec can be used as well.  For example, if drive D is a
+RAMdisk, entering:
+
+SET PKARCTMP=D:
+
+at the DOS prompt, or in your AUTOEXEC.BAT file, will  cause  PKARC 
+to use drive D for temporary files.
+
+
+
+Multitasking and Network Support
+--------------------------------
+
+When PKARC is used with DOS version 3.0 or above, PKARC will use  a
+unique filename for all temporary files created.  This allows PKARC
+to be run by concurrent programs or on a network drive without  any
+file contention or conflict.
+
+
+
+Using PKARC in a batch file
+---------------------------
+
+If you are using PKARC from a batch file, you  can  test  if  PKARC
+aborted  with  an  error  using the DOS errorlevel variable.  PKARC
+returns a non-zero errorlevel if an  error  occurred,  and  a  zero
+errorlevel for normal termination.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 13
+
+
+
+PKARC Error Messages
+--------------------
+
+When  any  of the following errors are detected, PKARC will display
+the indicated message and abort to DOS.   All  original  files  and
+archives  will  be  intact,  as  PKARC does not overwrite or delete
+existing files on the disk until the entire archive processing  has
+been  successfully  completed.
+
+
+PKARC: Unknown option: (unknown character)
+
+    The displayed option is unknown.
+
+PKARC: Insufficient Memory
+
+    There is not enough free memory to run PKARC.
+
+PKARC: No archive specified.
+
+    The name of the archive to be processed must be given.
+
+PKARC: No files specified for deletion.
+
+    The delete option was  specified,  but  no  files  were  given.
+    Unlike other options, delete does not assume *.* if no specific
+    files are given.
+
+PKARC: Can't find XXXXXXXX.YYY
+
+    The specified file(s) could not be found.
+
+PKARC: No file(s) found.
+
+    No files were found to add or update to the archive.
+
+PKARC: Can't create file XXXXXXXX.YYY
+
+    The displayed file could not be created.  The output directory
+    is probably invalid or full.
+
+PKARC: Too many files.
+
+    This error will occur if more than 512 files  or  16  different
+    drive/pathspecs  are  given  at  one  time for the add, update,
+    freshen, or move options.  While there is no limit on the total
+    number of files allowed in an archive, only 512 can be added at
+    one time.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 14
+
+
+
+PKARC: XXXXXXXX.YYY is not an archive.
+
+    The archive name given to PKARC existed on the disk, but either
+    is not an archive, or is corrupted.
+
+PKARC: Can't open XXXXXXXX.YYY
+
+    The displayed file could not be opened.
+
+PKARC: disk full
+
+    The disk is full.
+
+PKARC: XXXXXXXX.YYY is read-only!
+
+    The displayed archive file is a read-only or system file.
+    No modification (add, update, delete, etc.) is possible.
+
+
+PKARC: Can't open config file: PKARC.CFG.
+
+    The enviroment string PKARC.CFG= is incorrect, or a file error
+    occurred while opening the configuration file.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 15
+
+
+
+PKARC Revision History
+----------------------
+
+*** PKARC version 3.5, 04-27-87 ***
+
+In order to be consistent with the current version of  PKXARC,  the
+version number for PKARC has been bumped up to 3.5
+
+The performance of PKARC has been drastically  improved.  Squashing
+is  up  to  2X  faster and Crunching is up to 1.5X faster than ever
+before.
+
+The  Squashing  technique  now  compresses  better than ever.  Most
+files will typically compress several  percent  smaller  than  with
+PKARC 2.0.  Larger files will show the most improvement.
+
+A configuration file option has been added to PKARC to supplement
+the command line compatibility options.
+
+The DOS switch character is now supported as a valid option
+seperator.
+
+Both '/' and '\' characters are now allowed in pathnames.
+
+Ctrl-C and Ctrl-Break trapping has been added in  order  to  delete 
+temporary files before aborting.
+
+Multitasking and network support has been added to PKARC.
+
+The "arc garble" encryption feature has been added to PKARC.
+
+When used with large DOS environments, PKARC 2.0 would  abort  with
+an "insufficient memory" error.  This problem has been corrected.
+
+Wildcard file matching using '?' in the extension has been modified
+to work exactly like DOS directory wildcard matching.
+
+Damaged  headers  could  cause  the  verbose  listing  function  to
+malfunction in earlier versions of PKARC.  This has been corrected.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 16
+
+
+
+*** PKARC version 2.0, 12-15-86 ***
+
+A new compression method called  "Squashing"  was  added  to  PKARC 
+version  2.0.  Squashing is a variation of Dynamic Ziv-Lempel-Welch 
+compression  which  can  yield  a  significant   improvement   over 
+Crunching  for  larger  files.   Also,  the unSquashing of files is 
+faster than unCrunching.  In addition, the Dynamic Ziv-Lempel-Welch 
+Crunching  has  been  improved in PKARC version 2.0 with some files 
+Crunching significantly smaller than with  PKARC  version  1.2.   A 
+command  line  option  is  provided  to disable Squashing for older 
+archive programs such as SEA's ARC program.
+
+As  always,  minor  speed  improvements  have resulted in about 10%
+speed increase over the previous version.
+
+An "old compatibility switch" was added to PKARC  version  2.0  for
+compatibility  with SEA's archive dating method.  By default, PKARC
+sets the time and date of an archive to the current time  and  date
+whenever  it  is  modified.  The SEA archiver will set the time and
+date of an archive to the time and date of the latest  file  within
+the  archive.   While most users prefer that an archive date be set
+to the current date, this switch was added for those who prefer the
+SEA method.
+
+
+*** PKARC version 1.2, 10-23-86 ***
+
+PKARC  version  1.1  inadvertently  introduced a rare bug involving
+squeezed files.  This has been corrected in version 1.2.
+
+Archive commenting ability has been  added  to  PKARC.   PKARC  now
+allows  a comment to be assigned to an archive, in addition to each
+file within an  archive.   The  archive  comment  is  automatically
+displayed  when  the archive is manipulated by PKARC version 1.2 or
+later and PKXARC version 3.3 or later.
+
+File  buffering  has  been improved.  While PKARC will still run in
+minimum of 128K of RAM, PKARC will take advantage of up to 224K  of
+RAM if available to increase file buffering.
+
+The   Enhanced   Ziv-Lempel-Welch  compression  has  been  slightly 
+improved.  Some files will compress up  to  5%  smaller  than  with 
+PKARC   version   1.1.   Binary  files  will  experience  the  most 
+improvement.
+
+Optimizations  in  PKARC  version 1.2  have resulted in up to a 20%
+increase in archiving speed over PKARC version 1.1.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 17
+
+
+
+*** PKARC version 1.1, 9-12-86 ***
+
+Enhanced  Ziv-Lempel-Welch  compression  was  added  to PKARC.  The 
+enhanced Crunching algorithm provides superior  compression  ratios 
+over the traditional Crunching algorithm used in SEA's ARC program. 
+Files Crunched with the enhanced Crunching algorithm are up to  40% 
+smaller, yet still fully compatible with ARC and PKXARC.
+
+File buffering has been drastically improved, resulting in faster
+compression, especially on floppy disks.
+
+The improved buffering and other optimizations have resulted  in  a
+twofold increase in archiving speed over PKARC version 1.0.
+
+
+*** PKARC version 1.0, 8-06-86 ***
+
+Initial release.
+
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 18
+
+
+
+General Information
+-------------------
+
+PKARC  will  run  on any IBM PC/XT/AT/RT/jr/Portable/Convertible or 
+any MS-DOS compatible computer running PC/MS-DOS 2.0 or higher with 
+a minimum of 128K free RAM.
+
+
+IBM is a registered trademark of the International Business Machine
+Corporation.
+MS-DOS is a registered trademark of Microsoft Inc.
+
+
+If you have any questions or comments about PKARC send them to Phil
+Katz at:
+
+RBBS-PC of FARGO, Loren Jones SYSOP
+Fargo, North Dakota
+701-293-5973
+300/1200/2400 baud, 24 hours a day
+
+or
+
+Exec-PC IBM BBS, Bob Mahoney SYSOP
+Shorewood, Wisconsin
+414-964-5160
+300/1200/2400 baud, 24 hours a day
+
+
+Special  thanks to Loren Jones, Bob Mahoney, Alan Losoff, Gene Alm, 
+Mike Shawaluk, Paul Waldinger,  Arny  Krueger,  Mark  Tellier,  Joe 
+Vincent,  David Wyatt, and everyone else who has contributed to the 
+PKARC effort.
+
+PKARC  FAST!  Archive Create/Update Utility  Version 3.5  04-27-87   Page 19
+
+
+
+License
+-------
+
+Copyright (c) 1986,1987 PKWARE, Inc.  All Rights Reserved.
+
+You are free to use, copy and distribute PKARC for noncommercial use IF:
+
+        NO FEE IS CHARGED FOR USE, COPYING OR DISTRIBUTION.
+
+        IT IS NOT MODIFIED IN ANY WAY.
+
+Clubs and user groups may charge a nominal fee (less than $10)  for
+expenses and handling while distributing PKARC.
+
+Volume discounts, site licenses,  commercial  licenses  and  custom
+versions  of  PKARC and PKXARC are available.  Write to the address
+below for more information.
+
+This program is provided AS IS without any warranty,  expressed  or
+implied,  including  but  not  limited  to fitness for a particular
+purpose.
+
+If you find PKARC fast, easy, and convenient to use, a contribution
+of $20 would be appreciated.  With each contribution of $45 or more
+you will be registered to receive a diskette with the next  version
+of  PKARC  and  PKXARC  when  available.   Please state the current
+versions of PKARC and PKXARC that you have.  Send contributions to:
+
+PKWARE, Inc.
+7032 Ardara Avenue
+Glendale, WI 53209
+
+

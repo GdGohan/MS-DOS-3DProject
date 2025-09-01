@@ -1,0 +1,37 @@
+
+                           INSET* Printer Test
+
+        This is a file of sample text to be output to your printer.
+        What this test will demonstrate is INSET's ability to integrate
+        screen images into your printer output.  The text can be
+        printed from almost any report software.  The images can be
+        captured from almost any program on your PC.  Also, images can
+        be created or modified at any time with INSET's graphics editor
+        (even in your word processor!).
+
+        If INSET has been properly    [test]
+        installed, you should see an
+        image of a woman's face in
+        this document.  Note that
+        words and images can be
+        located side by side.  Also
+        notice that the text is
+        printed in your printers text
+        mode and the image is printed
+        in graphics mode.  Your
+        printer output is slowed only
+        by the amount of graphics to
+        be printed.
+
+        If this printout appears correct, read the "USING INSET"
+        section of your manual to learn more.  If you have problems
+        read "APPENDIX A:  TROUBLE SHOOTING" to solve your problems.
+
+        Congratulations!  Your are now a part of the INSET.  If your
+        report isn't read, how effective are your efforts?  INSET
+        images make the difference!
+
+        * INSET is a trademark of INSET Systems Inc.
+        [*mis^^n^^ This is a macro to set the ink table to Standard]
+
+

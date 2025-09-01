@@ -1,0 +1,23 @@
+                            INSET Menu Test
+
+        This is a test of the INSET menus.  Pop-up INSET's menu using
+        the SHIFT-PrtSc key (unless you have changed the default pop-up
+        key).  Note that the INSET menu will only pop-up from the
+        beginning of the DOS prompt (Press ENTER if needed).
+
+        You should notice a menu along [test]
+        the bottom of the screen.
+        Also, a box should appear
+        around the picture tag.  The
+        box will display the size of
+        the picture as it will be
+        printed.
+
+        Things to try ...
+        1) Select MODIFY/RESIZE/SCALED
+           to change the image size
+        2) Select MODIFY/PREVIEW to
+           preview the graphics & text
+        3) Select the EDIT/VIEW option and edit the image (captured from a CGA)
+        4) Go into your word processor and place the test picture in it.
+
