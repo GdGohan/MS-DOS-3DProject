@@ -15,7 +15,7 @@ INSTALLING C++ COMPILER
 
 watcomc
 
-COMPILING CPP (em breve)
+COMPILING CPP (EXAMPLE)
 autoexec
 wcl exemplo.c
 exemplos
@@ -41,4 +41,5 @@ srb2dos
 //DOS3D Project: https://github.com/kondrak/dos3d
 //LOTUS: https://archive.org/details/Lotus123OLD
 //SRB2: https://www.srb2.org/
+
 //Microsoft PaintBrush: https://archive.org/download/msdos_Microsoft_Paintbrush_1989
