@@ -42,8 +42,51 @@ EXECUTE SRB2 PROGRAM
 cd srb2
 srb2dos
 
+EXECUTE RPG ENGINE
+
+cd ohrdos
+customqb (custom.exe is for Windows)
+
+game-qb for testing the game
+
+-KEY SHORTCUTS-
+
+https://rpg.hamsterrepublic.com/ohrrpgce/Keyboard_Shortcuts#Sprite_Editor
+
+< = go left one color on palette
+> = go right one color on palette
+[ = switch one palette left
+] = switch one palette right
+D = draw tool
+F = fill tool
+O = oval tool
+A = airbrush tool
+M = Mark tool (copy a rectangular area)
+C = Clone tool (paste a previously copied/marked area)
+L = line tool
+B = box (rectangle) tool
+R = replace tool
+S = scroll tool
+P = Open Palette browser
+I = import sprites
+E = Export sprites
+Arrows = move cursor
+Space Bar = use tool
+ALT+Arrows = choose color on master palette
++ - = rotate sprite
+Backspace = horizontal flip
+Enter+Arrows = change center of cloned sprite brush
+CTRL+Z = undo
+CTRL+C = copies the sprite
+CTRL+V = pastes the sprite
+CTRL+T = Copies sprites, treating color 0 as transparent
+ALT+C = Copies 16-color palette
+ALT+V = Pastes 16-color palette
+
+
 //DOS3D Project: https://github.com/kondrak/dos3d
 //LOTUS: https://archive.org/details/Lotus123OLD
 //SRB2: https://www.srb2.org/
 //Microsoft PaintBrush: https://archive.org/download/msdos_Microsoft_Paintbrush_1989
 //PC Paint: https://www.shdon.com/software/pcpaint
+//obhrdos: http://www.doshaven.eu/programming-tools/
